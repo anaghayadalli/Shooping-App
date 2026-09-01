@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for
 
 app = Flask(__name__)
+app.config["APP_NAME"] = "Shopping App"
 
 products = [
     {"id": 1, "name": "T-Shirt", "price": 499},
