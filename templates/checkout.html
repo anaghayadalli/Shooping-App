@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Final Cart</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 30px;
+        }
+
+        .checkout-box {
+            background: white;
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px gray;
+        }
+
+        .item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .total {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #27ae60;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="checkout-box">
+
+    <h1>🧾 Final Cart</h1>
+
+    {% for item in cart %}
+
+        <div class="item">
+
+            {{ item.name }} - ₹{{ item.price }}
+
+        </div>
+
+    {% endfor %}
+
+    <hr>
+
+    <p>
+        Total Items: {{ cart|length }}
+    </p>
+
+    <p class="total">
+        Final Total: ₹{{ total }}
+    </p>
+
+    <button onclick="alert('Order placed successfully!')">
+        ✅ Place Order
+    </button>
+
+    <br><br>
+
+    <a href="/">
+        Continue Shopping
+    </a>
+
+</div>
+
+</body>
+
+</html>
